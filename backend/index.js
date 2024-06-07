@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const app = express();
 const authController = require('./controllers/authController');
 const productController = require('./controllers/productController');
+const uploadController = require('./controllers/uploadController');
 
 // connect db
 const connectDB = async () => {
@@ -25,7 +26,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/auth', authController);
 app.use('/product', authController);
-
+app.use('/upload', authController);
 // app.get('/', (req, res) => {
 //   res.send('Server is running');
 // });
