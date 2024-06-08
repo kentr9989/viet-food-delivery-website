@@ -1,10 +1,18 @@
 import React from 'react';
 import classes from './navbar.module.css';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+
 import { AiOutlineUser, AiOutlineShoppingCart } from 'react-icons/ai';
 const Navbar = () => {
+  const [isScroll, setIsScrolled] = useState(false);
+
+  window.onscroll = () => {
+    setIsScrolled(window.scrollY === 0 ? false : true);
+    return () => (window.onscroll = null);
+  };
   return (
-    <div className={classes.container}>
+    <div className={`${classes.container} ${isScroll && classes.scrolled}`}>
       <div className={classes.wrapper}>
         <div className={classes.left}>
           <Link to='/' className={classes.title}>

@@ -1,0 +1,98 @@
+.container {
+    height: calc(100vh - 60px);
+    width: 100%;
+    margin-top: 6rem;
+    margin-bottom: -15rem;
+}
+
+.wrapper {
+    height: 100%;
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    /* gap: 15rem; */
+}
+
+.title {
+    color : #f00;
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    white-space: nowrap;
+}
+
+.firstMsg {
+    margin-bottom: 25px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.firstMsg > span {
+    color : #f00;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.secondMsg {
+    font-size: 26px;
+    margin-bottom: 2rem;
+}
+
+.secondMsg > span {
+    font-weight: bold;
+    color: rgb(221,33,33);
+    
+}
+
+.buttons {
+    margin-top: 2.5rem;
+    display:flex;
+    align-items: center;
+    gap: 15px; 
+}
+
+.buttons > button {
+    outline: none;
+    border: 1px solid transparent;
+    padding: 0.5rem 1.25rem;
+    color: #fff;
+    background-color: #f00;
+    border-radius: 8px;
+    transition: 150ms all;
+}
+
+.buttons>button:hover {
+    border-color: #f00;
+    background-color: #fff;
+    color: #f00;
+}
+
+.buttonSee > a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 2rem;
+}
+
+.right {
+    flex: 1;
+}
+
+.phoImg {
+    height: 70%;
+    width: 80%;
+    object-fit: cover;
+}
+
+
