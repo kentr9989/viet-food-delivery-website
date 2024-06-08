@@ -5,7 +5,7 @@ import pho from '../../assets/pho.jpg';
 
 const Hero = () => {
   return (
-    <section style={{height: '150vh'}}id='home' className={classes.container}>
+    <section style={{height: '150vh'}} id='home' className={classes.container}>
       <div className={classes.wrapper}>
         <div className={classes.left}>
           <h2 className={classes.title}>

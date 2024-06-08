@@ -61,3 +61,37 @@
 .thirdImg {
     width: 240px;
 }
+
+@media only screen and (max-width: 768px) {
+    .delivery {
+        padding-left: 15rem;
+        margin-top: -30rem;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    
+    .deliveryInfos {
+        padding-left: 10rem;
+    }
+    .deliveryInfo > h3 {
+        text-align: center;
+        color : #333;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .deliveryTitle {
+        
+        font-size: 25px;
+        
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    
+
+    .deliveryTitle {
+        font-size: 20px
+    }
+}

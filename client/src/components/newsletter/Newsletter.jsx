@@ -6,8 +6,9 @@ const Newsletter = () => {
   return (
     <section id='contacts' className={classes.container}>
       <div className={classes.wrapper}>
-        <h4 className={classes.subtitle}>Want to get our latest offer ?</h4>
         <h2 className={classes.title}> Newsletter</h2>
+        <h4 className={classes.subtitle}>Want to get our latest offer ?</h4>
+
         <div className={classes.inputContainer}>
           <input type='text' placeholder='Enter your email :)' />
           <AiOutlineSend className={classes.sendIcon} />
