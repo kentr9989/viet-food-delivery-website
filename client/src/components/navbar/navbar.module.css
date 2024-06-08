@@ -112,3 +112,68 @@
     cursor: pointer;
 
 }
+
+@media only screen and (max-width: 768px) {
+    .wrapper {
+        width: 90%;
+    }
+    .left{ 
+        margin-left: 0.5rem;
+    }
+    .title {
+        
+        font-size: 15px;
+    }
+    
+    .list {
+        gap: 25px;
+    }
+
+    .listItem {
+        font-size: 12px;
+    }
+
+    .userIcon, .cartIcon {
+        font-size: 20px;
+        
+    }
+
+    .cartLogout {
+        font-size: 15px;
+    }
+    
+     
+ }
+
+ @media only screen and (max-width: 425px) {
+    .wrapper {
+        width: 100%;
+    }
+    .title {
+        
+        font-size: 12px;
+    }
+    
+    .list {
+        gap: 10px;
+    }
+
+    .listItem {
+        font-size: 10px;
+    }
+
+    .userIcon, .cartIcon {
+        font-size: 18px;
+        
+    }
+
+    .cartLogout {
+        font-size: 15px;
+    }
+    
+    .right {
+        gap: 0.5rem;
+        justify-content: center;
+    }
+     
+ }
