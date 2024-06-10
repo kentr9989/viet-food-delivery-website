@@ -81,3 +81,24 @@
     font-size: 40px;
     margin-bottom: 12.5rem;
 }
+
+@media only screen and (max-width: 425px) {
+    .container {
+        /* width: 50%; */
+        margin-left: 3.5rem;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .container {
+        /* width: 50%; */
+        margin-left: 5rem;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .container {
+        /* width: 50%; */
+        margin-left: 6.5rem;
+    }
+}

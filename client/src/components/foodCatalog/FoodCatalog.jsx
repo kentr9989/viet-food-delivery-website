@@ -33,7 +33,7 @@ const FoodCatalog = () => {
       <div className={classes.wrapper}>
         {filteredFoods?.length !== 0 && (
           <h2 className={classes.title}>
-            The best {foodEndpoint} in the region
+            One of the best {filteredFoods[0]?.category} in Australia
           </h2>
         )}
         <div className={classes.foods}>
