@@ -2,7 +2,7 @@
     height: calc(100vh - 60px);
     width: 100%;
     margin-top: 6rem;
-    margin-bottom: -15rem;
+    margin-bottom: -25rem;
 }
 
 .wrapper {
@@ -90,8 +90,8 @@
 }
 
 .phoImg {
-    height: 70%;
-    width: 80%;
+    height: 55%;
+    width: 70%;
     object-fit: cover;
 }
 

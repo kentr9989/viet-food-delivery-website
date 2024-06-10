@@ -1,7 +1,9 @@
 import React from 'react';
 import classes from './foodDetails.module.css';
 const FoodDetails = () => {
-  return <div></div>;
+  return <div className={classes.container}>
+    
+  </div>;
 };
 
 export default FoodDetails;

@@ -7,7 +7,7 @@ const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, 'public/images');
   },
-  fileName: (req, file, cb) => {
+  filename: (req, file, cb) => {
     cb(null, req.body.filename);
   },
 });
@@ -21,7 +21,7 @@ uploadController.post(
   '/image',
   verifyToken,
   upload.single('image'),
-  (req, res) => {
+  async (req, res) => {
     try {
       return res.status(201).json({ msg: 'successfully upload image' });
     } catch (error) {

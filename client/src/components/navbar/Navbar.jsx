@@ -1,11 +1,20 @@
 import React from 'react';
 import classes from './navbar.module.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-
+import { useDispatch } from 'react-redux';
+import { logout } from '../../redux/authSlice';
 import { AiOutlineUser, AiOutlineShoppingCart } from 'react-icons/ai';
+
 const Navbar = () => {
   const [isScroll, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate('/signin');
+  };
 
   window.onscroll = () => {
     setIsScrolled(window.scrollY === 0 ? false : true);
@@ -44,7 +53,9 @@ const Navbar = () => {
             <AiOutlineShoppingCart className={classes.cartIcon} />
             <div className={classes.cartQuantity}>0</div>
           </Link>
-          <button className={classes.cartLogout}>Logout</button>
+          <button className={classes.cartLogout} onClick={handleLogout}>
+            Logout
+          </button>
         </div>
       </div>
     </div>

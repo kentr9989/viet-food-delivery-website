@@ -4,7 +4,7 @@ const { verifyToken, verifyTokenAdmin } = require('../middlewares/verifyToken');
 const { verify } = require('jsonwebtoken');
 
 // get all by query after ?
-productController.get('/', verifyToken, async (req, res) => {
+productController.get('/', async (req, res) => {
   try {
     const products = await Product.find(req.query);
     return res.status(200).json(products);
@@ -28,7 +28,7 @@ productController.get('find/:id', verifyToken, async (req, res) => {
 });
 
 // create product
-// only allow
+// only allow admin
 productController.post('/', verifyTokenAdmin, async (req, res) => {
   try {
     const newProduct = await Product.create({ ...req.body });

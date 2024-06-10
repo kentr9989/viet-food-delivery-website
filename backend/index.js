@@ -19,19 +19,18 @@ const connectDB = async () => {
 };
 
 connectDB();
-
+app.use('/images', express.static('public/images'));
 // Routes & middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 app.use('/auth', authController);
-app.use('/product', authController);
-app.use('/upload', authController);
+app.use('/product', productController);
+app.use('/upload', uploadController);
 // app.get('/', (req, res) => {
 //   res.send('Server is running');
 // });
-
-
 
 //  start server on port 4500
 //  client on port 3000
