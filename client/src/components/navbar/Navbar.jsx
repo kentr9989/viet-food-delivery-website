@@ -4,13 +4,22 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../redux/authSlice';
+import { useSelector } from 'react-redux';
 import { AiOutlineUser, AiOutlineShoppingCart } from 'react-icons/ai';
 
 const Navbar = () => {
   const [isScroll, setIsScrolled] = useState(false);
+  // const [quantityOrder, setQuantityOrder]
+  const { products } = useSelector((state) => state.cart);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  
+
+  console.log(products);
+  // Calculate the total quantity of products in the cart
+  const totalQuantity = products.reduce(
+    (total, product) => total + product.quantity,
+    0
+  );
   const handleLogout = () => {
     dispatch(logout());
     navigate('/signin');
@@ -51,7 +60,7 @@ const Navbar = () => {
           <AiOutlineUser className={classes.userIcon} />
           <Link to='/cart' className={classes.cartContainer}>
             <AiOutlineShoppingCart className={classes.cartIcon} />
-            <div className={classes.cartQuantity}>0</div>
+            <div className={classes.cartQuantity}>{totalQuantity}</div>
           </Link>
           <button className={classes.cartLogout} onClick={handleLogout}>
             Logout

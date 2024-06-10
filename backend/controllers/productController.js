@@ -14,8 +14,9 @@ productController.get('/', async (req, res) => {
 });
 
 // get one by id via params
-productController.get('find/:id', verifyToken, async (req, res) => {
+productController.get('/find/:id', async (req, res) => {
   try {
+    // console.log(req);
     const productId = req.params.id;
     const product = await Product.findById(productId);
     if (!product) {
@@ -33,11 +34,9 @@ productController.post('/', verifyTokenAdmin, async (req, res) => {
   try {
     const newProduct = await Product.create({ ...req.body });
     return res.status(201).json(newProduct);
-
   } catch (error) {
     console.error(error);
   }
 });
-
 
 module.exports = productController;
