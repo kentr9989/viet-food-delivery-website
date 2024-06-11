@@ -1,0 +1,108 @@
+.container {
+    height: calc(100vh - 60px);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15rem;
+}
+
+.wrapper {
+    height: 85vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+
+}
+
+.wrapper > h2 {
+    font-weight: bold;
+    font-size: 36px;
+    white-space: nowrap;
+}
+
+.wrapper > p {
+    font-size: 28px;
+    font-weight: 500;
+    color: #333;
+}
+
+.wrapper > span {
+    font-size: 24px;
+    color: #555;
+}
+
+.deliveryDriverImg {
+    width: 100%;
+    max-width:600px;
+}
+
+.deliveryTime {
+    color: #f00;
+}
+
+.totalPrice {
+    padding: 1rem 2rem;
+    background-color:rgb(159, 159, 216);
+    color: white;
+    font-weight: 700;
+    font-size: 30px;
+    border-radius: 20px;
+
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .container {
+        margin-bottom: 10rem;
+    }
+
+    .wrapper {
+        height: 80vh;
+        width: 100vw;
+        gap: 15px;
+    }
+
+    .wrapper > h2 {
+        font-size: 25px;
+    }
+
+    .wrapper > p {
+        font-size: 18px;
+    }
+
+    .deliveryDriverImg {
+        width: 100%;
+        max-width:400px;
+    }
+
+    .totalPrice {
+        margin-top: 2rem;
+        padding: 0.5rem 1rem;
+        color: white;
+        font-weight: 700;
+        font-size: 18px;
+    
+    }
+    
+}
+
+@media only screen and (max-width: 425px) {
+    .container {
+        margin-bottom: 10rem;
+        margin-left: 5rem;
+    }
+
+    .wrapper {
+        height: 75vh;
+        width: 100vw;
+        gap: 15px;
+    }
+
+    .wrapper > p {
+        font-size: 17px;
+    }
+    
+}
