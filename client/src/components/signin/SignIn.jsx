@@ -26,9 +26,18 @@ const SignIn = () => {
       });
 
       const data = await res.json();
-      console.log(data);
-      dispatch(login(data));
-      navigate('/');
+      if (res.status === 200 || res.status === 201) {
+        dispatch(login(data));
+        navigate('/');
+      } else {
+        setError(true);
+        setTimeout(() => {
+          setError(false);
+        }, 5000);
+      }
+      // console.log(data);
+      // dispatch(login(data));
+      // navigate('/');
     } catch (error) {
       setError(true);
       setTimeout(() => {
