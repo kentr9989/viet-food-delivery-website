@@ -5,14 +5,15 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { removeProduct } from '../../redux/cartSlice';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-
+import { useState } from 'react';
 
 const Cart = () => {
   const { products } = useSelector((state) => state.cart);
+  const { user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [remindLoginMessage, setRemindLoginMessage] = useState(false);
 
-  
   let totalPrice = 0;
   products.map((product) => (totalPrice += product.quantity * product.price));
   const totalQuantity = products.reduce(
@@ -26,7 +27,14 @@ const Cart = () => {
 
   const handleOrder = () => {
     if (products.length > 0) {
-      navigate('/checkout');
+      if (user) {
+        navigate('/checkout');
+      } else {
+        setRemindLoginMessage(true);
+        setTimeout(() => {
+          setRemindLoginMessage(false);
+        },5000);
+      }
     }
   };
   return (
@@ -81,6 +89,11 @@ const Cart = () => {
             </span>
           </div>
         </div>
+        {remindLoginMessage && (
+          <div className={classes.remindLoginMessage}>
+            You need to login to checkout
+          </div>
+        )}
       </div>
     </div>
   );
