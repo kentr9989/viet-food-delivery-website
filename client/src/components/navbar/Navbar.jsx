@@ -9,6 +9,7 @@ import { AiOutlineUser, AiOutlineShoppingCart } from 'react-icons/ai';
 
 const Navbar = () => {
   const [isScroll, setIsScrolled] = useState(false);
+  const { user } = useSelector((state) => state.auth);
   // const [quantityOrder, setQuantityOrder]
   const { products } = useSelector((state) => state.cart);
   const navigate = useNavigate();
@@ -57,14 +58,25 @@ const Navbar = () => {
           </ul>
         </div>
         <div className={classes.right}>
-          <AiOutlineUser className={classes.userIcon} />
           <Link to='/cart' className={classes.cartContainer}>
             <AiOutlineShoppingCart className={classes.cartIcon} />
             <div className={classes.cartQuantity}>{totalQuantity}</div>
           </Link>
-          <button className={classes.cartLogout} onClick={handleLogout}>
-            Logout
-          </button>
+          {user ? (
+            <div className={classes.userContainer}>
+              <span className={classes.userName}>Hello, {user.username}</span>
+              <div className={classes.userIconCircle}>
+                <AiOutlineUser className={classes.userIcon} />
+              </div>
+              <button className={classes.cartLogout} onClick={handleLogout}>
+                Logout
+              </button>
+            </div>
+          ) : (
+            <button className={classes.cartLogout} onClick={handleLogout}>
+              Login
+            </button>
+          )}
         </div>
       </div>
     </div>

@@ -6,11 +6,13 @@ import { removeProduct } from '../../redux/cartSlice';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
+
 const Cart = () => {
   const { products } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  
   let totalPrice = 0;
   products.map((product) => (totalPrice += product.quantity * product.price));
   const totalQuantity = products.reduce(
