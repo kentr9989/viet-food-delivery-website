@@ -6,12 +6,13 @@ const app = express();
 const authController = require('./controllers/authController');
 const productController = require('./controllers/productController');
 const uploadController = require('./controllers/uploadController');
+const orderController = require('./controllers/orderController');
 
 // connect db
 const connectDB = async () => {
   try {
     await mongoose.connect(process.env.MONGO_URL);
-    console.log('MongoDB connected');
+    console.log('MongoDB is connected successfully');
   } catch (error) {
     console.error('Error connecting to MongoDB:', error.message);
     process.exit(1);
@@ -28,6 +29,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/auth', authController);
 app.use('/product', productController);
 app.use('/upload', uploadController);
+app.use('/order', orderController);
+
 // app.get('/', (req, res) => {
 //   res.send('Server is running');
 // });
