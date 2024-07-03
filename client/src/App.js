@@ -9,6 +9,7 @@ import Create from './components/create/Create';
 import FoodDetails from './components/foodDetails/FoodDetails';
 import FoodCatalog from './components/foodCatalog/FoodCatalog';
 import Cart from './components/cart/Cart';
+import OrderForm from './components/orderform/OrderForm';
 import Checkout from './components/checkout/Checkout';
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
@@ -20,7 +21,7 @@ function App() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
-  
+
   return (
     <>
       <Navbar />
@@ -32,6 +33,7 @@ function App() {
         <Route path='/create' element={<Create />} />
         <Route path='/food/:id' element={<FoodDetails />} />
         <Route path='/foods/:id' element={<FoodCatalog />} />
+        <Route path='/order' element={<OrderForm />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/checkout' element={<Checkout />} />
       </Routes>

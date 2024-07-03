@@ -31,9 +31,9 @@ app.use('/product', productController);
 app.use('/upload', uploadController);
 app.use('/order', orderController);
 
-// app.get('/', (req, res) => {
-//   res.send('Server is running');
-// });
+app.get('/', (req, res) => {
+  res.send('Server is running');
+});
 
 //  start server on port 4500
 //  client on port 3000

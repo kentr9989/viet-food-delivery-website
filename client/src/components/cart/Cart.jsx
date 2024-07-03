@@ -28,7 +28,7 @@ const Cart = () => {
   const handleOrder = () => {
     if (products.length > 0) {
       if (user) {
-        navigate('/checkout');
+        navigate('/order');
       } else {
         setRemindLoginMessage(true);
         setTimeout(() => {
